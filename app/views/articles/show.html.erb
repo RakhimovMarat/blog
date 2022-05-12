@@ -1,7 +1,17 @@
- <h1><%= @article.title %></h1>
+<h1><%= @article.title %></h1>
 
 <p><%= @article.text %></p>
+<br />
 
+<h2>Comments:</h2>
+<% @article.comments.each do |comment| %>
+<p>
+	<i><%= comment.author %> said: </i><%= comment.body %>
+</p>
+<% end %>
+<br />
+
+<h2>Add comment:</h2>
 <p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
 	<p>
@@ -15,7 +25,7 @@
 	</p>
 
 	<p>
-		<%= f.submit 'Add comment' %>
+		<%= f.submit %>
 	</p>
 <% end %>
 </p>
