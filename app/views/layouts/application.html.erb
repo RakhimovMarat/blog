@@ -28,7 +28,16 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <%= button_to "Sign In", new_user_session_path, :method => :get %> <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% if user_signed_in? %>
+
+              <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+
+              <% else %>
+
+              <%= button_to "Sign In", new_user_session_path, :method => :get %>
+
+              <% end %>
+              
             </li>
           </ul>
         </div>
