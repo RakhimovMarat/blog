@@ -15,35 +15,35 @@
     <div class="container">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/articles">Posts</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container-fluid">
+          <a class="navbar-brand mb-0 h1" href="/">Blog</a>
+     
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="/articles">Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/articles/new">Create post</a>
+              </li>
+            </ul>
+                    
+            <% if user_signed_in? %>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link active" aria-current="page" href="/articles/new">New post</a>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <% if user_signed_in? %>
-
-              Hello, <%= current_user.username %> <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <div class="navbar-text me-2">Hello, <%= current_user.username %> </div> <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-outline-secondary" %>
 
               <% else %>
 
-              <%= button_to "Sign In", new_user_session_path, :method => :get %>
+              <%= button_to "Sign In", new_user_session_path, :method => :get, class: "btn btn-outline-secondary" %>
 
-              <% end %>
-              
-            </li>
-          </ul>
+              <% end %>     
+          
+          </div>
+
         </div>
       </nav>
 
-      <div>
+    <div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 
