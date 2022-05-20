@@ -1,6 +1,7 @@
 <h1>Edit article</h1>
 
 <%= form_for :article, data: { turbo: false }, url: article_path(@article), method: :put do |f| %>
+
 	<p>
 		<%= f.label :title %> <br />
 		<%= f.text_field :title %>
