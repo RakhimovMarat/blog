@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
 
 	def edit
 		@article = Article.find(params[:id])
-		if current_user.username == @article.author 
+		if @article.author && current_user && @article.author == current_user.username
 			render action: 'edit'
 		else
 			flash[:notice] = "You can't edit this post!"

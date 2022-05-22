@@ -9,16 +9,16 @@
 
 			<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
   				<div class="btn-group me-2" role="group">
-    				<%= button_to 'Read more', article_path(article), method: :get, class: "btn btn-outline-secondary" %>
+    				<%= button_to 'Read more', article_path(article), method: :get, class: "btn btn-secondary" %>
   				</div>
 
-  				<% if current_user.username == article.author %>
+  				<% if article.author && current_user && article.author == current_user.username %>
 
   				<div class="btn-group me-2" role="group">
-    				<%= button_to 'Edit', edit_article_path(article), method: :get, class: "btn btn-outline-secondary" %>
+    				<%= button_to 'Edit', edit_article_path(article), method: :get, class: "btn btn-secondary" %>
   				</div>
   				<div class="btn-group" role="group">
-    				<%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-outline-danger" %>
+    				<%= button_to 'Delete', article_path(article), method: :delete, class: "btn btn-danger" %>
   				</div>
 
   				<% end %>
