@@ -9,4 +9,24 @@ describe Article do
 	describe "associations" do
 		it { should have_many :comments }	
 	end	
+
+	describe "#subject" do
+		it "returns the article title" do
+			# создаем объект article хитрым способом
+			article = create(:article, title: 'Lorem Ipsum')	
+
+			#assert, проверка
+			expect(article.subject).to  eq 'Lorem Ipsum'
+		end
+	end
+
+	describe "#last_comment" do
+    	it "returns the last comment" do
+    		# создаём статью с 3 комментариями
+      		article = create(:article_with_comments)
+
+      		# проверка
+      		expect(article.last_comment.body).to eq "Comment body 3"
+    	end
+	end
 end
