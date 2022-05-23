@@ -78,4 +78,5 @@ gem 'bootstrap', '~> 5.1.3'
 group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
