@@ -75,3 +75,7 @@ RSpec.configure do |config|
 end
 
 require 'capybara/rspec'
+
+require 'support/session_helper'
+
+require 'support/database_cleaner'
