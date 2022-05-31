@@ -1,9 +1,5 @@
 class PagesController < ApplicationController
+  def terms; end
 
-	def terms
-	end
-
-	def about
-	end
-
+  def about; end
 end
