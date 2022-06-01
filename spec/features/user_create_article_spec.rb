@@ -16,6 +16,4 @@ feature 'Article creation' do
 
     expect(page).to have_content I18n.t('articles.created_by')
   end
-
-
 end

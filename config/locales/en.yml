@@ -38,3 +38,6 @@ en:
   articles:
     new: "New article" 
     created_by: "Cerated by "
+
+  comments:
+    said: " said:"

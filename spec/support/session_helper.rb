@@ -29,3 +29,11 @@ def create_article
   click_button 'Create article'
 end
 
+def create_comment
+  articles_path
+
+  fill_in :comment_body, with: 'This is a comment'
+
+  click_button 'Create Comment'
+end
+

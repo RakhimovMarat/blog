@@ -9,7 +9,7 @@
 <h2>Comments:</h2>
 <% @article.comments.each do |comment| %>
 <p>
-	<i><b><%= comment.author %></b> said:</i><br />
+	<i><b><%= comment.author %></b><%= t('comments.said') %></i><br />
 	<%= comment.body %>
 </p>
 <% end %>
