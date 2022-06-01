@@ -19,3 +19,13 @@ def log_in
 
   click_button 'Log in'
 end
+
+def create_article
+  visit new_article_path
+
+  fill_in :article_title, with: 'Post7'
+  fill_in :article_text, with: 'This is post #7'
+
+  click_button 'Create article'
+end
+
