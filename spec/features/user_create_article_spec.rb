@@ -11,11 +11,11 @@ feature 'Article creation' do
     expect(page).to have_content I18n.t('articles.new')
   end
 
-#  scenario 'allows user to create new article' do
-#    create_article
+  scenario 'allows user to create new article' do
+    create_article
 
-#    expect(page).to have_content I18n.t('???')
-#  end
+    expect(page).to have_content I18n.t('articles.created_by')
+  end
 
 
 end
